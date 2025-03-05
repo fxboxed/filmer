@@ -1,0 +1,34 @@
+{{ define "main" }}
+  {{/*  <h1>{{ .Title }}</h1>  */}}
+  {{/*  <h1>default cities</h1>  */}}
+{{/*  <nav class="city-nav">
+
+  </nav>  */}}
+
+
+{{/*    */}}
+
+<nav id="city-nav" class="city-nav">
+ 
+  {{ range .Pages }}
+
+  <a href="{{ .RelPermalink }}" class="city-nav-link"  >{{ .Params.tab }}</a>
+
+
+  {{/*  {{ .Summary }}  */}}
+{{ end }}
+</nav>
+
+<div class="holy-grail">
+
+  <div class="main">
+    <h1 class="banner-item"> {{.Title}}</h1>
+    <img class="banner-item" src="{{.Params.image}}" alt="{{.Params.alt_txt}}">
+      {{ .Content }}
+  </div>
+  <div class="aside">
+
+  </div>
+</div>
+
+{{ end }}

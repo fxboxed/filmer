@@ -1,0 +1,88 @@
+footer 
+    //background alpha - (20%)
+    min-height 300px
+    padding 60px 0 0
+
+    position relative
+    width 100%
+footer::after 
+    //background linear-gradient(rgba(alpha, 0.5), rgba(gamma, 0.2))
+    background linear-gradient(rgba(gamma, 0.2), rgba(alpha, 0.8))
+    content ''
+    height 100%
+    position absolute
+    top 0
+    left 0
+    width 100%
+    z-index -1
+
+.footer-grid 
+    display grid 
+    gap 40px
+    grid-template-columns: repeat(1,1fr) // repeat(auto-fill, minmax(350px, 400px) )
+    margin auto
+    max-width 1280px
+    ul 
+        list-style none
+    a 
+        color light
+        font-size 1.2rem
+    .country-link-grid
+        display grid
+        gap 16px
+.foot 
+
+    background alpha - (80%)
+    display flex
+    gap 20px
+    justify-content: center
+    grid-column span 2
+    margin-top 24px
+    padding 20px
+        
+    ul 
+        border none
+        display flex
+        align-items center
+        gap 24px
+        flex-direction row
+        justify-content: center
+        list-style none
+        width 100%
+    a 
+        color light
+p.foot-p 
+    background alpha - (80%)
+    border-top 1px solid rgba(light, 0.2)
+    color light
+    margin 0
+    padding 15px
+    text-align: center
+.to-top 
+    //background red
+    display block
+    color gamma - 60%
+    font-weight: 800
+    margin 20px auto 32px
+    padding: 12px 24px
+    text-decoration: underline
+    width fit-content
+
+    
+nav.footer-nav
+    display grid
+    gap 16px
+    grid-template-columns repeat(auto-fill, minmax(160px, 1fr) )
+    grid-column 1 / -1
+    justify-content space-between
+    overflow-y: scroll;
+    max-height 400px
+
+
+    .footer-link 
+        color light - 20%
+        font-size 1.2rem
+        text-align center
+        text-decoration none
+        &:hover
+            color alpha

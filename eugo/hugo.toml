@@ -1,0 +1,10 @@
+baseURL = 'https://eugo.uk/'
+languageCode = 'en-us'
+title = 'eugo travel'
+theme = 'eugo-theme'
+enableRobotsTXT = "true"
+googleAnalytics = "G-J8786MWRCY"
+
+[params]
+  canonicalUrl = 'https://eugo.uk/'
+

@@ -1,0 +1,45 @@
+.topnav.country-dropdown
+    background  alpha + 20
+    //border-bottom 1px solid light
+    display grid
+    gap 12px
+    grid-template-columns:  repeat(auto-fill, minmax(100px, 1fr));
+    //height 0
+    //margin-top -60px
+    margin auto
+    max-width 400px
+    padding-bottom 60px
+    position absolute
+    top 32px
+    transform scale(0)
+    width 100%
+    a 
+        background alpha - 10
+        //border-radius 8px
+        //border 1px solid light
+        color light //+ 20 //- (90%)//alpha
+        font-weight bold
+        padding 6px 8px //20px
+        text-decoration underline
+.country-dropdown 
+    left 2.5%
+    transform translateX(-75%)
+.topnav.country-dropdown.show-country-list
+    height auto
+    //padding-bottom 40px
+    transform scale(1)
+    transition all 0.5s
+    z-index 100
+.country-list button 
+    background   alpha 
+    border 5px solid gamma
+    color light 
+    font-size 1.2rem
+    grid-column 1 / -1
+    height 50px 
+    margin auto
+    width 140px 
+@media(min-width 600px)
+    .topnav.country-dropdown
+        margin-top 0
+        max-width 600px

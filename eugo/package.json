@@ -1,0 +1,16 @@
+{
+  "name": "eugo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "stylus": "stylus -w assets/styls/main.styl -o themes/eugo-theme/static/css/main.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "stylus": "^0.64.0",
+    "stylus-loader": "^8.1.1"
+  }
+}

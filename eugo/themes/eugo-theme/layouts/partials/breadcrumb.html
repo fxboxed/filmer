@@ -1,0 +1,26 @@
+
+<div class="breadcrumb-navwrap">
+<nav class="breadcrumb-nav id='breadcrumb-nav' " aria-label="breadcrumb ">
+  
+      {{/*  <ul class="breadcrumb">  */}}
+        {{- define "partials/inline/breadcrumb" -}}
+
+          {{- with .Parent }}
+            {{ partial "inline/breadcrumb" . }}
+            {{/*  <li class="breadcrumb-item">  */}}
+              <a class="breadcrumb-link"  href="{{ .RelPermalink }}">{{ .Params.tab | humanize | title }}</a>
+            {{/*  </li>  */}}
+          {{- end }}
+        {{- end -}}
+        {{ partial "inline/breadcrumb" . }}
+        {{/*  <li class="breadcrumb-item active" aria-current="page">  */}}
+          <p class="breadcumb-end">
+            {{ .Params.tab  }}            
+          </p>
+          {{/*  {{ .Params.tab  }}  */}}
+        {{/*  </li>  */}}
+      {{/*  </ul>  */}}
+
+  </nav>
+
+</div>

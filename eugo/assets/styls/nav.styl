@@ -1,0 +1,60 @@
+nav.navbar 
+    background transparent //alpha + (80%)// light
+    display flex 
+    align-items center
+    gap 16px
+    justify-content space-between
+    height 80px
+    margin-top 0
+    //margin-bottom 24px
+    padding 0 10px
+    position absolute //fixed
+    top 0
+    width 100%
+    z-index 1
+    a  
+        color gamma - (80)//alpha
+        display inline-block
+        font-size 1.2rem
+        font-weight 500
+        text-transform uppercase
+        padding 20px 10px
+        //border-radius 5px
+        transition all 0.3s
+        &:hover
+            background alpha
+            color light
+            transition all 0.3s
+.country-list
+    //background #fff
+
+
+    border-radius 16px
+    background: rgba(0, 0, 0, 0.1);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+
+
+
+    transform translateX(-50%)
+    z-index 1
+//open-country-dropdown when btn is clicked
+.country-list.show-country-list 
+    height initial //400px // auto //fit-content
+    max-height fit-content
+    //margin-left auto
+    //margin-top 60px
+    padding 16px
+    //opacity 1
+    transform translateX(-50%)
+    //transform scale(1)
+    transition all .8s ease-in-out
+    //width 400px
+.locations.show-country-list
+    //transform scale(1)
+    transition all .4s ease-in-out
+//
+
+
+
+

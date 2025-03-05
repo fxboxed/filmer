@@ -1,0 +1,143 @@
+light = #fff
+alpha = #2f3441
+beta = #7a0000 //#3b4c69
+gamma = #374f83
+delta = #4a6689
+
+
+@require './holy-grail.styl'
+@require './nav.styl'
+@require './forms.styl'
+@require './header'
+@require './footer'
+
+@require './city-nav.styl'
+@require './breadcrumb-nav.styl'
+@require './topnav.styl'
+// @require './city-nav.styl'
+
+
+@font-face 
+    font-family 'Montserrat'
+    font-style normal
+    font-weight 200
+    src url('/fonts/Montserrat/static/Montserrat-Regular.ttf')
+
+@font-face 
+    font-family 'Merienda'
+    font-style normal
+    font-weight 200
+    src url('/fonts/Merienda/static/Merienda-Regular.ttf')
+@font-face 
+    font-family 'El Messiri'
+    font-style normal
+    font-weight 200
+    src url('/fonts/El_Messeri/static/ElMessiri-Regular.ttf')
+* 
+    box-sizing border-box
+    margin 0
+    padding 0
+
+html 
+    scroll-behavior: smooth;
+body 
+    background alpha
+    color alpha - (40%)
+    font-family 'Montserrat'
+    line-height 1.4
+
+
+a
+    text-decoration: none
+button 
+    background none
+    border none
+    cursor pointer
+    outline none
+    position relative
+img 
+    //border 18px solid light
+    //box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    max-width 100%
+    height 300px //auto //100%
+    display block
+    //margin 40px auto
+    //max-height 400px
+    object-fit: cover
+    padding 0
+    border-radius 5px
+    width 400px
+
+h1 
+    //border-top 2px solid #fff //gamma
+    //border-bottom 2px solid gamma //alpha
+    color light
+    font-family 'Merienda'
+    font-size 1.6rem
+    font-weight 200
+    line-height 1.3
+    margin-bottom 16px
+    padding 8px 0
+    text-align center
+
+h2 
+    color beta
+    font-family 'Merienda'
+    font-weight 200
+    margin 20px 0 8px
+    text-align center
+h3 
+    font-family 'Merienda'
+    font-weight 200
+    color alpha - (90)
+
+    margin 24px 0 16px
+p 
+    color alpha - (80%)
+    font-family 'Montserrat'
+    font-size 1.2rem
+    line-height 1.6
+    margin-bottom 12px
+// p.header-p 
+//     color alpha - (80%) //light
+
+
+.container 
+    min-height 90vh
+    max-width 660px
+    margin 0 auto
+    //padding 0 20px
+    overflow hidden
+    display flex
+    flex-direction column
+    flex-wrap wrap
+    justify-content start //space-between
+    align-items center
+
+
+@media(min-width 768px)
+    .container
+        max-width 768px
+        width 100%
+    .country-banner 
+        display grid
+        grid-template-columns: 1fr 1fr
+        text-align left
+    .footer-grid 
+        grid-template-columns: 1fr 1fr
+
+
+@media(min-width 1024px)
+    .container
+        max-width 1024px
+        width 100%
+@media(min-width 1280px)
+    .container
+        max-width 1280px
+        width 100%
+    // .footer-grid 
+    //     grid-template-columns: 1fr 1fr 1fr 1fr
+    #map 
+
+        width 100%
+

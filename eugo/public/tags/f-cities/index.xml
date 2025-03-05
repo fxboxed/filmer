@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>F Cities on eugo travel</title>
+    <link>http://localhost:1313/tags/f-cities/</link>
+    <description>Recent content in F Cities on eugo travel</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 01 Jan 2023 08:00:00 -0700</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/f-cities/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Xxxx</title>
+      <link>http://localhost:1313/finland/cities/helsinki/</link>
+      <pubDate>Sun, 01 Jan 2023 08:00:00 -0700</pubDate>
+      <guid>http://localhost:1313/finland/cities/helsinki/</guid>
+      <description>&lt;h1 id=&#34;xxxx-city-1-index-content&#34;&gt;Xxxx city 1 index content&lt;/h1&gt;</description>
+    </item>
+  </channel>
+</rss>

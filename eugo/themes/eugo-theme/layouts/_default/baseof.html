@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <meta property="og:title" content="{{ .Title }} | {{ .Site.Title }}" />
+    <meta property="og:image" content="{{ .Site.BaseURL }}{{ .Params.image }}" />
+    <meta name="og:description" content="{{ .Params.description }}" />
+    <meta name="description" content="{{ .Params.description }}" />
+    <title>{{.Title}}</title>
+
+    {{ with .Params.relcanonical }}
+    <link rel="canonical" href="{{ . | relLangURL }}" itemprop="url" />
+  {{ else -}}
+    <link rel="canonical" href="{{ .Permalink }}" itemprop="url" />
+  {{ end -}}
+
+
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J8786MWRCY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J8786MWRCY');
+</script>
+
+</head>
+  {{/*  {{ partial "head.html" . }}  */}}
+
+<body>
+  <header id = "top-marker">
+    {{ partial "header.html" . }}
+ 
+  </header>
+  {{- partial "breadcrumb.html" . -}}
+  <main>
+ 
+    {{ block "main" . }}{{ end }}
+  </main>
+  <footer id="bottom-marker" >
+    {{ partial "footer.html" . }}
+  </footer>
+  <script src="/js/countries.js" defer></script>
+</body>
+</html>

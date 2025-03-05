@@ -1,0 +1,35 @@
+{{/*  {{ define "main" }}
+  {{ .Content }}
+  {{ range site.RegularPages }}
+    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+    {{ .Summary }}
+  {{ end }}
+{{ end }}  */}}
+{{define "main"}}
+
+
+ 
+  {{/*  <h1>{{.Title}}</h1>  */}}
+
+ {{/*  <h2>
+  {{ range where .Data.Pages "Type" "cities" }}
+    <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+  {{ end }}
+ </h2>  */}}
+
+
+
+
+{{/*    */}}
+<div class="holy-grail">
+  <div class="main">
+    <h1 class="banner-item"> {{.Title}}</h1>
+    <img class="banner-item" src="{{.Params.image}}" alt="{{.Params.alt_txt}}">
+    {{ .Content }}
+  </div>
+  <div class="aside">
+
+  </div>
+</div>
+{{end}}
+
