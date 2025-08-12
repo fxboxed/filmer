@@ -1,0 +1,20 @@
+if pagination.total > 1
+  nav.pagination
+    if pagination.current > 1
+      a(href=pagination.current === 2 ? pagination.firstHref : `${pagination.baseHref}/${pagination.current - 1}`) Previous
+    else
+      span Previous
+
+    each pageNumber in [...Array(pagination.total).keys()].map(n => n + 1)
+      if pageNumber === pagination.current
+        span= pageNumber
+      else if pageNumber === 1
+        a(href=pagination.firstHref)= pageNumber
+      else
+        a(href=`${pagination.baseHref}/${pageNumber}`)= pageNumber
+
+    if pagination.current < pagination.total
+      a(href=`${pagination.baseHref}/${pagination.current + 1}`) Next
+    else
+      span Next
+

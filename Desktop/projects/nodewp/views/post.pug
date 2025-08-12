@@ -1,0 +1,13 @@
+//- views/post.pug
+extends layout
+
+block content
+  if post
+    article
+      h2= post.title
+      if post.content
+        div!= post.content
+      else
+        p= post.body || 'No content.'
+  else
+    p Post not found.

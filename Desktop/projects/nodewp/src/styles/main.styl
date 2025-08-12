@@ -1,0 +1,39 @@
+/* src/styles/main.styl */
+//stylus variables
+
+alpha = #1A1A1A
+alpha = #523c32
+
+global-width = 1200px
+small = 660px // asside < go to single column > go to 2 column
+medium = 900px // main aside to 2 column with slimmer aside 360
+large = 1080px //  aside gets wider eg 400
+
+:root
+  --gap 1rem
+
+body
+  margin 0
+  font-family system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif
+  line-height 1.6
+  padding var(--gap)
+  background alpha + 20%
+
+header, footer
+  margin-bottom calc(var(--gap) * 2)
+
+article
+  padding var(--gap)
+  border 1px solid #ddd
+  border-radius 8px
+  margin-bottom var(--gap)
+
+nav.pagination
+  display flex
+  align-items center
+  gap var(--gap)
+// @import '_layout'
+// @import '_forms'
+// @import '_components'
+@import './styls/_contact'
+

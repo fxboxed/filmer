@@ -1,0 +1,26 @@
+/* src/styles/main.styl */
+:root {
+  --gap: 1rem;
+}
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height: 1.6;
+  padding: var(--gap);
+  background: #815e4f;
+}
+header,
+footer {
+  margin-bottom: calc(var(--gap) * 2);
+}
+article {
+  padding: var(--gap);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: var(--gap);
+}
+nav.pagination {
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+}

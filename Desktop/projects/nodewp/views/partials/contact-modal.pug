@@ -1,0 +1,14 @@
+div#contactModal.modal
+  .modal-liner
+    form#contactForm(method="POST", action="/contact")
+      h2.sloped-heading Contact Us
+      input(type="text", name="name", placeholder="Your Name", required)
+      input(type="email", name="email", placeholder="Your Email", required)
+      textarea.contact-text-area(name="message", placeholder="Your Message", required)
+      .button-row
+        button#closeModal(type="button") Cancel
+        button(type="submit") Send
+
+div#toast.toast
+  span#toastMessage
+  button#toastClose(type="button") ×

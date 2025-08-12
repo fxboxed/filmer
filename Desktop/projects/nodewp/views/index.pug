@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1 Homepage updated
+
+  each post in posts
+    article
+      h2= post.title
+      p= post.content
+
+  include partials/pagination
+

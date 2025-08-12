@@ -1,0 +1,85 @@
+# deploy/Caddyfile
+# HTTPS-by-default, HTTP→HTTPS redirects, loopback proxy, hardening headers,
+# optional rate limits, and /healthz endpoints on both hosts.
+
+{
+  email {$ACME_EMAIL}
+}
+
+# --- Force HTTP → HTTPS (root + app) -----------------------
+http://{$ROOT_HOST}, http://www.{$ROOT_HOST} {
+  redir https://{$ROOT_HOST}{uri} permanent
+}
+http://{$APP_HOST} {
+  redir https://{$APP_HOST}{uri} permanent
+}
+
+# --- Canonical redirect (www → apex) -----------------------
+www.{$ROOT_HOST} {
+  redir https://{$ROOT_HOST}{uri} permanent
+}
+
+# --- WordPress on root domain ------------------------------
+{$ROOT_HOST} {
+  encode zstd gzip
+
+  # Health check served by Caddy (not proxied)
+  @health path /healthz
+  respond @health 200
+
+  # (Optional) Basic rate limits — uncomment if your build supports `rate_limit`
+  # rate_limit {
+  #   zone perip {
+  #     key {remote_host}
+  #     events 20
+  #     window 1s
+  #     burst 40
+  #   }
+  #   match * perip
+  # }
+
+  reverse_proxy 127.0.0.1:8080
+
+  header {
+    X-Frame-Options "SAMEORIGIN"
+    X-Content-Type-Options "nosniff"
+    Referrer-Policy "strict-origin-when-cross-origin"
+    Permissions-Policy "geolocation=(), microphone=(), camera=()"
+  }
+}
+
+# --- Node app on subdomain --------------------------------
+{$APP_HOST} {
+  encode zstd gzip
+
+  # Health check served by Caddy (not proxied)
+  @health path /healthz
+  respond @health 200
+
+  # (Optional) Basic rate limits — uncomment if your build supports `rate_limit`
+  # rate_limit {
+  #   zone perip {
+  #     key {remote_host}
+  #     events 20
+  #     window 1s
+  #     burst 40
+  #   }
+  #   match * perip
+  # }
+
+  reverse_proxy 127.0.0.1:{$PORT}
+
+  header {
+    X-Frame-Options "SAMEORIGIN"
+    X-Content-Type-Options "nosniff"
+    Referrer-Policy "strict-origin-when-cross-origin"
+    Permissions-Policy "geolocation=(), microphone=(), camera=()"
+  }
+}
+
+# --- Optional local HTTP probe ------------------------------
+http://localhost {
+  respond "Caddy is up (WP: 127.0.0.1:8080, Node: 127.0.0.1:{$PORT})" 200
+}
+
+

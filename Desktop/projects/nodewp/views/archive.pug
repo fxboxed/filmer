@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1= title
+
+  if posts.length
+    each post in posts
+      article
+        h2= post.title
+        if post.content
+          p= post.content
+  else
+    p No posts found.
+
+  include partials/pagination
